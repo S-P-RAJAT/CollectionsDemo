@@ -1,9 +1,11 @@
 package com.bridgelabz.collectionsdemo;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.Stack;
@@ -16,6 +18,7 @@ public class CollectionsDemo {
 		doStackDemo();
 		doQueueDemo();
 		doSetDemo();
+		doMapDemo();
 	}
 
 	private static void doListDemo() {
@@ -45,7 +48,7 @@ public class CollectionsDemo {
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
 		}
-		System.out.println("ELement popped: " + elementAtTop);
+		System.out.println("Element popped: " + elementAtTop);
 	}
 
 	private static void doQueueDemo() {
@@ -60,7 +63,7 @@ public class CollectionsDemo {
 		System.out.println("Head : " + queue.element());
 		System.out.println("Head : " + queue.peek());
 
-		System.out.println("Queue Elememts  are : ");
+		System.out.println("\nQueue Elements  are : ");
 		Iterator<String> iterator = queue.iterator();
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
@@ -69,7 +72,7 @@ public class CollectionsDemo {
 		queue.remove();
 		queue.poll();
 
-		System.out.println(" after removing two elements : ");
+		System.out.println("After removing two elements : ");
 		iterator = queue.iterator();
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
@@ -88,5 +91,19 @@ public class CollectionsDemo {
 		{
 			System.out.println(element);
 		}
+	}
+	private static void doMapDemo()
+	{
+		System.out.println("\nMap demo :");
+		Map<Integer,String> map = new HashMap<Integer,String>();
+		map.put(100, "raj");
+		map.put(200, "ram");
+		map.put(10, "rahul");
+
+		for(Map.Entry<Integer, String> elementInMap : map.entrySet()) 
+		{
+			System.out.println(elementInMap.getKey()+" - "+elementInMap.getValue());
+		}
+
 	}
 }
